@@ -1,0 +1,16 @@
+[metric]
+  addr="127.0.0.1:55555"
+  interval="1s"
+[app]
+    mode="local"
+    [app.registry.etcd]
+        endpoints = ["127.0.0.1:2379"]
+        timeout="2s"
+        secure=false
+    [app.logger]
+        [app.logger.db]
+            path="db.json"
+            level="Info"
+        [app.logger.grpc]
+            path="grpc.json"
+            level="Info"

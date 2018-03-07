@@ -1,0 +1,15 @@
+[app]
+    mode='lvchao'
+    debug=true
+	[app.registry.etcd]
+		endpoints=["10.1.41.52:2379"]
+		timeout="2s"
+        secure=false
+    [app.metric]
+        addr="10.1.41.51:9091"
+        interval="10s"
+[server]
+    [server.http]
+        port=8909
+    [server.grpc]
+        port=8907

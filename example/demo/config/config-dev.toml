@@ -1,0 +1,26 @@
+[app]
+    mode="dev"
+	[app.registry.etcd]
+		endpoints=["10.1.41.52:2379"]
+		timeout="2s"
+        secure=false
+    [app.logger]
+        #[[app.logger.output]]
+            #level = "Info | Warn | Error | Fatal"
+            #file = "output.log"
+        #[[app.logger.output]] 
+            #level = "Debug"
+            #file = "debug.log"
+        [[app.logger.output]]
+            level = "INFO"
+            color = true
+    [app.metric]
+        addr = "10.1.41.51:9091"
+        interval="1s"
+[server]
+    [server.http]
+        port=8909
+    [server.grpc]
+        port=8907
+
+
